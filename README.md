@@ -18,7 +18,7 @@ Infrastructure
   * `strict-transport-security: max-age=31536000`
   * [ ] If the service is not hosted under `services.mozilla.com`, it must be manually added to [Firefox's preloaded pins](https://dxr.mozilla.org/mozilla-central/source/security/manager/tools/PreloadedHPKPins.json#184). This only applies to production services, not short-lived experiments.
 * [ ] Correctly set client IP
-  * [ ] Sanitize [X-Forwarded-For](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-For) sent from the client. AWS and GCP's load balancers will do this automatically
+  * [ ] Confirm client ip is in the proper location in [X-Forwarded-For](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-For), modifying what is sent from the client if needed. AWS and GCP's load balancers will do this automatically.
   * [ ] Make sure the web server and the application get the true client IP by configuring trusted IP's within Nginx or Apache
     * Nginx: [ngx_http_realip_module](https://nginx.org/en/docs/http/ngx_http_realip_module.html)
     * Apache: [mod_remoteip](https://httpd.apache.org/docs/2.4/mod/mod_remoteip.html)
