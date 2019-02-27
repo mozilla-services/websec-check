@@ -62,11 +62,12 @@ Logging
 
 Web Applications
 ----------------
-* [ ] Must have a CSP with
-  * [ ] a report-uri pointing to the service's own `/__cspreport__` endpoint
-  * [ ] web API responses should return `default-src 'none'; frame-ancestors 'none'; base-uri 'none'; report-uri /__cspreport__` to disallowing all content rendering, framing, and report violations
-  * [ ] if default-src is not `none`, frame-src, and object-src should be `none` or only allow specific origins
-  * [ ] no use of unsafe-inline or unsafe-eval in script-src, style-src, and img-src
+* [ ] Must have a [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy). The policy:
+  * [ ] should set `default-src none` or only allow specific origins and set `frame-src` and `object-src` to `none` if default-src is not `none`
+  * [ ] web API responses should return `default-src 'none'; frame-ancestors 'none'; base-uri 'none'` to disallow content rendering and framing/redressing
+  * [ ] should not use `unsafe-inline` or `unsafe-eval` in `script-src`, `style-src`, or `img-src` directives (
+  * [ ] may include a `report-uri` directive to provide visibility into CSP violations
+
 * [ ] Third-party javascript must be pinned to specific versions using [Subresource Integrity (SRI)](https://infosec.mozilla.org/guidelines/web_security#subresource-integrity)
 * [ ] Web APIs:
   * [ ] must set a non-HTML content-type on all responses, including 300s, 400s and 500s
