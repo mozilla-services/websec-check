@@ -22,6 +22,7 @@ Infrastructure
   * [ ] Make sure the web server and the application get the true client IP by configuring trusted IP's within Nginx or Apache
     * Nginx: [ngx_http_realip_module](https://nginx.org/en/docs/http/ngx_http_realip_module.html)
     * Apache: [mod_remoteip](https://httpd.apache.org/docs/2.4/mod/mod_remoteip.html)
+  * [ ] If you have a service-oriented architecture, you must always be able to find the IP of the client that sent the initial request. We recommend passing along the `X-Forwarded-For` to all back-end services.
 * If service has an admin panels, it must:
   * [ ] only be available behind Mozilla VPN (which provides MFA)
   * [ ] require Auth0 authentication
