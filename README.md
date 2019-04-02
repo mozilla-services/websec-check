@@ -88,8 +88,9 @@ Security Features
   * Session keys must be changed on login to prevent session fixation attacks.
   * Session cookies must have HttpOnly and Secure flags set and the SameSite attribute set to 'strict' or 'lax' (which allows external regular links to login).
   * For more information about potential pitfalls see the [OWASP Session Management Cheat Sheet](https://www.owasp.org/index.php/Session_Management_Cheat_Sheet)
-* [ ] When using cookies for session management, make sure you have CSRF protections in place. The easiest mitigation if you don't need support for older browsers is to use SameSite cookies. If we you can't use SameSite, make sure that forms that change state use anti CSRF tokens, and that forms that do not change state (e.g. search forms) use the 'data-no-csrf' form attribute.
-  * This does not apply to site that use local-storage JWTs for session management, like sites on SSO.
+* [ ] When using cookies for session management, make sure you have CSRF protections in place, which in 99% of cases is [SameSite cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#SameSite_cookies). If you can't use SameSite, use anti CSRF tokens. There are two exceptions to implementing CSRF protection:
+  * Forms that don't change state (e.g. search forms) don't need CSRF protection and can indicate that by setting the 'data-no-csrf' form attribute (this tells our ZAP scanner to ignore those forms when testing for CSRF).
+  * Sites that don't use cookies for anything sensitive can ignore CSRF protection. A lot of modern sites prefer to use local-storage JWTs for session management, which aren't vulnerable to CSRF (but must have a rock solid CSP).
 * [ ] Access Control should be via existing and well regarded frameworks. If you really do need to roll your own then contact the security team for a design and implementation review.
 * [ ] If you are building a core Firefox service, consider adding it to the list of restricted domains in the preference `extensions.webextensions.restrictedDomains`. This will prevent a malicious extension from being able to steal sensitive information from it, see [bug 1415644](https://bugzilla.mozilla.org/show_bug.cgi?id=1415644).
 
