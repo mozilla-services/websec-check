@@ -88,7 +88,8 @@ Security Features
   * Session keys must be changed on login to prevent session fixation attacks.
   * Session cookies must have HttpOnly and Secure flags set and the SameSite attribute set to 'strict' or 'lax' (which allows external regular links to login).
   * For more information about potential pitfalls see the [OWASP Session Management Cheat Sheet](https://www.owasp.org/index.php/Session_Management_Cheat_Sheet)
-* [ ] Form that change state should use anti CSRF tokens. Anti CSRF tokens can be dropped for internal sites using SameSite session cookies where we are sure all users will be on Firefox 60+. Forms that do not change state (e.g. search forms) should use the 'data-no-csrf' form attribute.
+* [ ] When using cookies for session management, make sure you have CSRF protections in place. The easiest mitigation if you don't need support for older browsers is to use SameSite cookies. If we you can't use SameSite, make sure that forms that change state use anti CSRF tokens, and that forms that do not change state (e.g. search forms) use the 'data-no-csrf' form attribute.
+  * This does not apply to site that use local-storage JWTs for session management, like sites on SSO.
 * [ ] Access Control should be via existing and well regarded frameworks. If you really do need to roll your own then contact the security team for a design and implementation review.
 * [ ] If you are building a core Firefox service, consider adding it to the list of restricted domains in the preference `extensions.webextensions.restrictedDomains`. This will prevent a malicious extension from being able to steal sensitive information from it, see [bug 1415644](https://bugzilla.mozilla.org/show_bug.cgi?id=1415644).
 
