@@ -26,6 +26,7 @@ Infrastructure
 * If service has an admin panels, it must:
   * [ ] only be available behind Mozilla VPN (which provides MFA)
   * [ ] require Auth0 authentication
+  * [ ] Enforce a CSP with `frame-ancestors 'none';` to prevent iframe related attacks
 
 Development
 -----------
