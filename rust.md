@@ -6,7 +6,7 @@ A checklist for people using Rust to develop Firefox services, to be used in add
 * [ ] Use https://github.com/mozilla-services/slog-mozlog-json for service logging
 * [ ] Binaries (as opposed to libraries) should include a Cargo.lock file in version control
 * [ ] Use https://dependabot.com/rust/ to keep your dependencies up to date
-* [ ] Only use ‘unsafe’ when it is absolutely necessary
+* [ ] Only use 'unsafe' when it is absolutely necessary
 * [ ] Only use Rust nightly when it is absolutely necessary
   * [ ] If you have to use nightly track the features you require so that you can move of fit once they are merged into stable
 * [ ] Minimise dependencies, and only use well regarded and supported ones (not Rust specific, but important due to the relative immaturity of the ecosystem)
@@ -30,9 +30,9 @@ For the above checklist.
 * [ ] Use https://github.com/RustSec/cargo-audit to check for dependency security vulnerabilities
 * [ ] Use https://github.com/rust-lang/rust-clippy for linting (easier for new projects)
 * [ ] Use https://github.com/mozilla-services/slog-mozlog-json for service logging
-* [ ] Use a Cargo.lock file (which is also required for cargo-audit)
+* [ ] Binaries (as opposed to libraries) should include a Cargo.lock file in version control
 * [ ] Use https://dependabot.com/rust/ to keep your dependencies up to date
-* [ ] Only use ‘unsafe’ when it is absolutely necessary
+* [ ] Only use 'unsafe' when it is absolutely necessary
 * [ ] Only use Rust nightly when it is absolutely necessary
   * [ ] If you have to use nightly track the features you require so that you can move of fit once they are merged into stable
 * [ ] Minimise dependencies, and only use well regarded and supported ones (not Rust specific, but important due to the relative immaturity of the ecosystem)
