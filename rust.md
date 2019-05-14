@@ -6,7 +6,8 @@ A checklist for people using Rust to develop Firefox services, to be used in add
 * [ ] Use [slog-mozlog-json](https://github.com/mozilla-services/slog-mozlog-json) for service logging
 * [ ] Binaries (as opposed to libraries) should include a Cargo.lock file in version control
 * [ ] Use [dependabot](https://dependabot.com/rust/) to keep your dependencies up to date
-* [ ] Only use 'unsafe' when it is absolutely necessary - this should never be the case in service code
+* [ ] Add `#![forbid(unsafe_code)]` to your crate (e.g. the top of `main.rs` or `lib.rs`)
+  * [ ] If you must use 'unsafe', include a comment explaining why you believe its use is sound and its behavior is correct and well defined
 * [ ] Only use Rust nightly when it is absolutely necessary
   * [ ] If you have to use nightly track the features you require so that you can move off it once they are merged into stable
 * [ ] Minimise dependencies (not Rust specific, but important due to the relative immaturity of the ecosystem)
@@ -38,7 +39,8 @@ For the above checklist.
 * [ ] Use [slog-mozlog-json](https://github.com/mozilla-services/slog-mozlog-json) for service logging
 * [ ] Binaries (as opposed to libraries) should include a Cargo.lock file in version control
 * [ ] Use [dependabot](https://dependabot.com/rust/) to keep your dependencies up to date
-* [ ] Only use 'unsafe' when it is absolutely necessary - this should never be the case in service code
+* [ ] Add `#![forbid(unsafe_code)]` to your crate (e.g. the top of `main.rs` or `lib.rs`)
+  * [ ] If you must use 'unsafe', include a comment explaining why you believe its use is sound and its behavior is correct and well defined
 * [ ] Only use Rust nightly when it is absolutely necessary
   * [ ] If you have to use nightly track the features you require so that you can move off it once they are merged into stable
 * [ ] Minimise dependencies (not Rust specific, but important due to the relative immaturity of the ecosystem)
