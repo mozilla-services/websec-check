@@ -26,6 +26,7 @@ Infrastructure
 * If service has an admin panels, it must:
   * [ ] only be available behind Mozilla VPN (which provides MFA)
   * [ ] require Auth0 authentication
+* [ ] Build and deploy main or -slim variants of official language-specific base docker images e.g. [node](https://hub.docker.com/_/node/), [python](https://hub.docker.com/_/python/), or [rust](https://hub.docker.com/_/rust/) and contact secops@ if you want to use other variants
 
 Development
 -----------
