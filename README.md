@@ -36,15 +36,7 @@ Development
 * [ ] Sign all release tags, and ideally commits as well
   * Developers should [configure git to sign all tags](http://micropipes.com/blog//2016/08/31/signing-your-commits-on-github-with-a-gpg-key/) and upload their PGP fingerprint to https://login.mozilla.com
   * The signature verification will eventually become a requirement to shipping a release to staging & prod: the tag being deployed in the pipeline must have a matching tag in git signed by a project owner. This control is designed to reduce the risk of a 3rd party GitHub integration from compromising our source code.
-* [ ] enable security scanning of 3rd-party libraries and dependencies
-  * For node.js, use [`npm audit`](https://docs.npmjs.com/cli/audit) with [audit-filter](https://github.com/mozilla-services/audit-filter) to review and handle exceptions (see example in [speech-proxy](https://github.com/mozilla/speech-proxy/pull/77/files#diff-b9cfc7f2cdf78a7f4b91a753d10865a2))
-  * For Python, enable pyup security updates:
-    * Add a pyup config to your repo (example config: https://github.com/mozilla-services/antenna/blob/master/.pyup.yml)
-    * Enable branch protection for master and other development branches. Make sure the approved-mozilla-pyup-configuration team *CANNOT* push to those branches.
-    * From the "add a team" dropdown for your repo /settings page
-      * Add the "Approved Mozilla PyUp Configuration" team for your github org (e.g. for [mozilla](https://github.com/orgs/mozilla/teams/approved-mozilla-pyup-configuration) and [mozilla-services](https://github.com/orgs/mozilla-services/teams/approved-mozilla-pyup-configuration))
-      * Grant it write permission so it can make pull requests
-    * notify secops@mozilla.com to enable the integration in pyup
+* [ ] Enable [automated security fix PRs on GitHub](https://help.github.com/en/articles/configuring-automated-security-fixes#managing-automated-security-fixes-for-your-repository) for vulnerabilities in 3rd-party dependencies
 * [ ] Keep 3rd-party libraries up to date (in addition to the security updates)
   * For NodeJS applications, use [dependabot](https://dependabot.com/), [renovate](https://renovateapp.com/), or [GreenKeeper](https://greenkeeper.io/)
   * For Python, use ``pip list --outdated`` or [requires.io](https://requires.io/) or pyup outdated checks
