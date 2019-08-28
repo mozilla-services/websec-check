@@ -69,8 +69,11 @@ Web Applications
 * [ ] Web APIs must set a non-HTML content-type on all responses, including 300s, 400s and 500s
 * [ ] Set the Secure and HTTPOnly flags on [Cookies](https://wiki.mozilla.org/Security/Guidelines/Web_Security#Cookies), and use sensible Expiration
 * [ ] Make sure your application gets an A+ on the [Mozilla Observatory](https://observatory.mozilla.org/)
-* [ ] Verify your application doesn't have any failures on the [Security Baseline](https://github.com/mozilla-services/foxsec-results/blob/master/baseline-scan/Baseline-Services.md).
-  * Contact secops@ or ping 'psiinon' on github to document exceptions to the baseline, mark csrf exempt forms, etc.
+* [ ] Confirm your application doesn't fail the [ZAP Security Baseline](https://github.com/zaproxy/zaproxy/wiki/ZAP-Baseline-Scan):
+  1. Register your service as described in the Risk Management section (if you are not registering your service you can run the scan as described at: https://github.com/zaproxy/zaproxy/wiki/ZAP-Baseline-Scan)
+  2. Go to [The STMO baseline dashboard](https://sql.telemetry.mozilla.org/dashboard/security-baseline-top-level-scores) (if you do not have access to the dashboard, contact secops@)
+  3. Filter for your service name and check that the "failures" column is 0. Click on each individual site for additional information about any failures.
+  4. If you need to document exceptions to the baseline e.g. to mark a search form as CSRF exempt, contact secops@ or ping 'psiinon' on github to get the scan config updated
 * [ ] Web APIs should export an OpenAPI (Swagger) to facilitate automated vulnerability tests
 
 Security Features
