@@ -6,7 +6,7 @@ Markdown issue template:
 ```
 Risk Management
 ---------------
-* [ ] The service must have performed a Rapid Risk Assessment and have a Risk Record bug
+* [ ] The service must have performed a Rapid Risk Assessment
 * [ ] The service must be registered via a [New Service issue](https://github.com/mozilla-services/foxsec/issues/new?template=NewService.md&labels=New%20Service&assignee=psiinon&title=New%20Service:%20)
 
 Infrastructure
