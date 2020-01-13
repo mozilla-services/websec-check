@@ -67,7 +67,10 @@ Web Applications
   * [ ] no use of unsafe-inline or unsafe-eval in script-src, style-src, and img-src
 * [ ] Third-party javascript must be pinned to specific versions using [Subresource Integrity (SRI)](https://infosec.mozilla.org/guidelines/web_security#subresource-integrity)
 * [ ] Web APIs must set a non-HTML content-type on all responses, including 300s, 400s and 500s
-* [ ] Set the Secure and HTTPOnly flags on [Cookies](https://wiki.mozilla.org/Security/Guidelines/Web_Security#Cookies), and use sensible Expiration
+* [ ] for [Cookies](https://wiki.mozilla.org/Security/Guidelines/Web_Security#Cookies):
+  * [ ] Set the Secure and HTTPOnly flags
+  * [ ] Use a sensible Expiration
+  * [ ] Use the prefix `__Host-` for the cookie name
 * [ ] Make sure your application gets an A+ on the [Mozilla Observatory](https://observatory.mozilla.org/)
 * [ ] Confirm your application doesn't fail the [ZAP Security Baseline](https://github.com/zaproxy/zaproxy/wiki/ZAP-Baseline-Scan):
   1. Register your service as described in the Risk Management section (if you are not registering your service you can run the scan as described at: https://github.com/zaproxy/zaproxy/wiki/ZAP-Baseline-Scan)
