@@ -70,7 +70,7 @@ Web Applications
 * [ ] Web APIs:
   * [ ] must set a non-HTML content-type on all responses, including 300s, 400s and 500s
   * [ ] Web APIs should export an OpenAPI (Swagger) to facilitate automated vulnerability tests
-  * [ ] Should use authentication tokens with a unique pattern which is easily parsed with a regexp. This will allow easy inclusion into a token scanning service if needed in the future.
+  * [ ] Should use authentication tokens with a unique pattern which is easily parsed with a regexp. This should allow inclusion into a token scanning service in the future. (E.g. prefix `mgp-` + 20 hex digits would match the regexp `\bmgp-[0-9A-Fa-f]{20}\b`)
 * [ ] for [Cookies](https://wiki.mozilla.org/Security/Guidelines/Web_Security#Cookies):
   * [ ] Set the Secure and HTTPOnly flags
   * [ ] Use a sensible Expiration
