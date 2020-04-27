@@ -1,9 +1,10 @@
 # websec-check
-repo and tooling for https://wiki.mozilla.org/Security/FirefoxOperations#Security_Checklist
+
+repo and tooling for [wikimo checklist](https://wiki.mozilla.org/Security/FirefoxOperations#Security_Checklist)
 
 Markdown issue template:
 
-```
+```markdown
 Risk Management
 ---------------
 * [ ] The service must have performed a Rapid Risk Assessment
@@ -66,7 +67,10 @@ Web Applications
   * [ ] if default-src is not `none`, frame-src, and object-src should be `none` or only allow specific origins
   * [ ] no use of unsafe-inline or unsafe-eval in script-src, style-src, and img-src
 * [ ] Third-party javascript must be pinned to specific versions using [Subresource Integrity (SRI)](https://infosec.mozilla.org/guidelines/web_security#subresource-integrity)
-* [ ] Web APIs must set a non-HTML content-type on all responses, including 300s, 400s and 500s
+* [ ] Web APIs:
+  * [ ] must set a non-HTML content-type on all responses, including 300s, 400s and 500s
+  * [ ] Web APIs should export an OpenAPI (Swagger) to facilitate automated vulnerability tests
+  * [ ] Should use authentication tokens with a unique pattern which is easily parsed with a regexp. This will allow easy inclusion into a token scanning service if needed in the future.
 * [ ] for [Cookies](https://wiki.mozilla.org/Security/Guidelines/Web_Security#Cookies):
   * [ ] Set the Secure and HTTPOnly flags
   * [ ] Use a sensible Expiration
@@ -77,7 +81,6 @@ Web Applications
   2. Go to [The STMO baseline dashboard](https://sql.telemetry.mozilla.org/dashboard/security-baseline-top-level-scores) (if you do not have access to the dashboard, contact secops@)
   3. Filter for your service name and check that the "failures" column is 0. Click on each individual site for additional information about any failures.
   4. If you need to document exceptions to the baseline e.g. to mark a search form as CSRF exempt, contact secops@ or ping 'psiinon' on github to get the scan config updated
-* [ ] Web APIs should export an OpenAPI (Swagger) to facilitate automated vulnerability tests
 
 Security Features
 -----------------
