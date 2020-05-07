@@ -8,7 +8,7 @@ Markdown issue template:
 Risk Management
 ---------------
 * [ ] The service must have performed a Rapid Risk Assessment
-* [ ] The service must be registered via a [New Service issue](https://github.com/mozilla-services/foxsec/issues/new?template=NewService.md&labels=New%20Service&assignee=psiinon&title=New%20Service:%20)
+* [ ] The service must be registered via a [New Service issue](https://github.com/mozilla-services/foxsec/issues/new?template=01_NewService.md&labels=New%20Service&assignee=psiinon&title=New%20Service:%20). You need to have access to the mozilla-services GitHub organization to be able to view and create this issue (ping secops if you don't have access).
 
 Infrastructure
 --------------
