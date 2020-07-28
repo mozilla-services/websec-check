@@ -23,7 +23,7 @@ A checklist for people using Rust to develop Firefox services, to be used in add
 
 | Crate | Description |
 | ----- | ----------- |
-| [Actix](https://crates.io/crates/actix) | Actix is a Rust actors framework. |
+| [Actix web](https://crates.io/crates/actix-web) | Actix web is a small, pragmatic, and extremely fast rust web framework. |
 | [Hyper](https://crates.io/crates/hyper) | A fast and correct HTTP implementation for Rust. |
 | [Reqwest](https://crates.io/crates/reqwest) | An ergonomic, batteries-included HTTP Client for Rust. |
 | [Serde](https://crates.io/crates/serde) | Serde is a framework for serializing and deserializing Rust data structures efficiently and generically. |
