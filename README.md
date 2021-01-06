@@ -1,6 +1,6 @@
 # websec-check
 
-repo and tooling for [wikimo checklist](https://wiki.mozilla.org/Security/FirefoxOperations#Security_Checklist)
+The [Firefox Operations Security Team's](https://wiki.mozilla.org/Security/FirefoxOperations) web security checklist for Firefox Services.
 
 Markdown issue template:
 
